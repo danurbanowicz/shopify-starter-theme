@@ -27,6 +27,7 @@
   {%- comment -%} Required for lazy-loading with Webpack on Shopify CDN {%- endcomment -%}
   {%- capture randomFile -%}{{ 'theme.bundle.js' | asset_url }}{%- endcapture -%}
   {%- assign assetsPath = randomFile | split: 'theme.bundle.js' | first -%}
+  
   <script>window.__webpack_public_path__ = "{{ assetsPath }}"</script>
 
   <link rel="preload" href="{{ 'theme.bundle.js' | asset_url }}" as="script">
